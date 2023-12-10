@@ -33,28 +33,31 @@ void reset_sokoban(struct_t *word)
 
 void key_up(struct_t *word)
 {
-    if (word->str[word->y - 1][word->x] != '#') {
+    if (word->y - 2 >= 0 &&
+        word->str[word->y - 1][word->x] != '#') {
         my_condition_key_up(word);
     }
 }
 
 void key_down(struct_t *word)
 {
-    if (word->str[word->y + 1][word->x] != '#') {
+    if (word->str[word->y + 2] != NULL &&
+        word->str[word->y + 1][word->x] != '#') {
         my_condition_key_down(word);
     }
 }
 
 void key_left(struct_t *word)
 {
-    if (word->str[word->y][word->x - 1] != '#') {
+    if (word->x - 1 >= 0 && word->str[word->y][word->x - 1] != '#') {
         my_condition_key_left(word);
     }
 }
 
 void key_right(struct_t *word)
 {
-    if (word->str[word->y][word->x + 1] != '#') {
+    if (word->str[word->y][word->x + 2] != '\0' &&
+        word->str[word->y][word->x + 1] != '#') {
         my_condition_key_right(word);
     }
 }
