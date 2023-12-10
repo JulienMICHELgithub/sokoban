@@ -12,7 +12,7 @@ void realy_stuck(int y, int x, struct_t *w)
     if (w->str[y][x] == 'X') {
         w->count_x++;
         w->next_to = 0;
-        if ((w->str[y - 1][x] == '#' || w->str[y - 1][x] == 'X'))
+        if (y > 0 && (w->str[y - 1][x] == '#' || w->str[y - 1][x] == 'X'))
             w->next_to++;
         if (w->str[y + 1] != NULL && (w->str[y + 1][x] == '#'
                 || w->str[y + 1][x] == 'X'))

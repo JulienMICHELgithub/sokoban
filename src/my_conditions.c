@@ -12,7 +12,7 @@ void my_condition_key_up(struct_t *w)
     char current_char = w->str[w->y - 1][w->x];
     char next_char = w->str[w->y - 2][w->x];
 
-    if (w->y > 1 && (w->str[w->y - 1][w->x] == ' ' || w->str[w->y - 1][w->y] == 'O')) {
+    if (w->str[w->y - 1][w->x] == ' ' || w->str[w->y - 1][w->y] == 'O') {
         (w->y)--;
     } else if (current_char == 'X' && (next_char == ' ' || next_char == 'O')) {
         w->str[w->y - 2][w->x] = 'X';
